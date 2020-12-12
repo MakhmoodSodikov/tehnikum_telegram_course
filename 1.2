@@ -1,0 +1,12 @@
+a = int(input("> "))
+b = int(input("> "))
+c = int(input("> "))
+
+
+if a > b >= c or a > c >= b:
+    print(a, "is the biggest number.")
+else:
+    if b > a >= c or b > c >= a:
+        print(b, "is the biggest number.")
+    else:
+        print(c, "is the biggest number.")
