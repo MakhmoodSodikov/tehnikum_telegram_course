@@ -25,3 +25,8 @@ select Имя
 from General_Table
 where Город='Ташкент'
 ''').fetchall())
+
+cursor.execute('''
+delete from General_Table
+where Возраст > 20
+''') # Удаляем из базы данных всех, чей возраст больше 20
