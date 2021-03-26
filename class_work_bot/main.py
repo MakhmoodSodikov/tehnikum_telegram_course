@@ -1,7 +1,7 @@
 """
 Модуль для старта проекта
 """
-
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackQueryHandler
 
 
 
@@ -17,4 +17,8 @@ dispatcher.add_handler(CommandHandler("start", start))
 
 dispatcher.add_handler(MessageHandler(Filters.text, text_msg))
 
+dispatcher.add_handler(CallbackQueryHandler(callback=inline_reply, pattern='yes'))
+
 updater.start_polling()
+
+updater.idle()
