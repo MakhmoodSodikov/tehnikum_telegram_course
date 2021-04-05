@@ -1,13 +1,11 @@
-import sqlite3
-from const import DB_PATH
+UPDATE_PHONE = '''
+    UPDATE users
+    SET phone = '{}'
+    WHERE id = '{}'
+'''
 
-
-def execute_request(request):
-    conn = sqlite3.connect(DB_PATH)
-    cursor = conn.cursor()
-
-    val = cursor.execute(request).fetchall()
-
-    conn.commit()
-
-    return val
+SELECT_CODE = '''
+    SELECT stage
+    FROM users
+    WHERE id = '{}'
+'''
